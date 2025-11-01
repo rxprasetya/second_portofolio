@@ -5,7 +5,7 @@ import Socials from "../components/Socials"
 
 const Home = () => {
     return (
-        <section className="flex h-full items-center justify-center">
+        <section className="flex h-full items-center justify-center gap-6">
             <div className="flex-1 flex flex-col gap-3 order-2 xl:order-0">
                 <h4 className="text-xl">Software Engineering</h4>
                 <h1 className="text-5xl">Hello, I'm</h1>

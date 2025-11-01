@@ -13,7 +13,7 @@ const Template = ({ children }: TemplateProps) => {
             <PageTransition children={
                 <>
                     <Header />
-                    <main className="container w-screen h-screen mx-auto">
+                    <main className="container w-screen h-screen pt-16 mx-auto">
                         {children}
                     </main>
                 </>
