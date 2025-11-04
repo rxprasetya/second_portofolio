@@ -16,7 +16,7 @@ const projects = [
   {
     title: "Project 01",
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora animi in quisquam blanditiis rerum molestias similique iste exercitationem distinctio.",
-    stacks: [faReact, faCss3Alt],
+    stacks: [faReact],
     path: "https://fe-sebaran-penjualan.vercel.app/",
     photo: picture,
   },
@@ -46,38 +46,39 @@ const Project = () => {
   };
 
   return (
-    <section className="h-full flex flex-col justify-center gap-6">
+    <section className="h-full flex flex-col justify-center">
       <motion.div
         key={currentIndex}
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
           transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" },
-        }} className="flex items-center justify-center gap-4">
-        <div className="flex-1 flex flex-col gap-5 order-2 xl:order-0">
-          <h1 className="text-8xl font-aboreto">
+        }}
+        className="h-full flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-16">
+        <div className="flex-1 flex flex-col gap-4 order-2 lg:order-0">
+          <h1 className="text-6xl lg:text-8xl font-aboreto">
             {currentIndex < 9 && "0"}{currentIndex + 1}
           </h1>
-          <h1 className="text-5xl text-accent">{currentProject.title}</h1>
+          <h1 className="text-4xl lg:text-5xl text-accent min-h-[64px]">{currentProject.title}</h1>
           <p className="text-lg text-muted-foreground text-justify">
             {currentProject.desc}
           </p>
-
           <div className="flex items-center gap-2 text-3xl">
             {currentProject.stacks.map((icon, i) => (
               <FontAwesomeIcon key={i} icon={icon} />
             ))}
           </div>
-
           <hr />
-
           <Link
-            className="w-9 h-9 bg-secondary rounded-full flex items-center justify-center text-base ml-auto hover:text-accent transition-all duration-300"
+            className="px-4 py-1 bg-secondary rounded-full flex items-center justify-center text-base mr-auto ml-0 lg:mr-0 lg:ml-auto hover:text-accent transition-all duration-300"
             to={currentProject.path}
             target="_blank"
           >
             <Tooltip>
-              <TooltipTrigger>
+              <TooltipTrigger className="flex items-center justify-center gap-2">
+                <span className="text-lg">
+                  Tap to see
+                </span>
                 <FontAwesomeIcon icon={faChevronRight} />
               </TooltipTrigger>
               <TooltipContent>
@@ -87,9 +88,9 @@ const Project = () => {
           </Link>
         </div>
 
-        <div className="flex-1 flex items-center justify-end order-1 xl:order-0">
+        <div className="flex-1 flex w-full items-center justify-end order-1 lg:order-0">
           <img
-            className="w-full h-[192px] md:h-[256px] xl:h-[388px] object-cover rounded-md"
+            className="w-full max-h-[412px] object-cover rounded-xl"
             src={currentProject.photo}
             alt={`Preview of ${currentProject.title}`}
           />
@@ -101,7 +102,7 @@ const Project = () => {
         animate={{
           opacity: 1,
           transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" },
-        }} className="flex items-center justify-end gap-2">
+        }} className="w-full flex justify-end gap-2">
         <Button
           variant="outline"
           size="sm"

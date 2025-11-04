@@ -25,7 +25,7 @@ const Socials = () => {
     return (
         <div className="flex gap-4">
             {links.map((link, index) => (
-                <Link className="w-9 h-9 border border-accent rounded-full flex items-center justify-center text-accent text-2xl hover:bg-accent hover:text-primary hover:transition-all duration-500" key={index} to={link.path}>
+                <Link className="w-9 h-9 border border-accent rounded-full flex items-center justify-center text-accent text-2xl hover:bg-accent hover:text-primary hover:transition-all duration-500" key={index} to={link.path} target={`_blank`}>
                     <Tooltip>
                         <TooltipTrigger>
                             <FontAwesomeIcon icon={link.icon} />
