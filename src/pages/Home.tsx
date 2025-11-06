@@ -10,15 +10,17 @@ const Home = () => {
                 <h4 className="text-xl">Software Engineering</h4>
                 <h1 className="text-4xl lg:text-5xl">Hello, I'm</h1>
                 <h1 className="text-4xl lg:text-5xl text-accent">Rafid Artur Prasetya</h1>
-                <p className="text-lg text-muted-foreground lg:text-justify">
+                <p className="text-base lg:text-lg text-muted-foreground lg:text-justify">
                     I'm passionate about creating responsive, clean, and user-friendly websites. I've developed a personal portfolio and several small projects that focus on mobile-friendly design and smooth user experiences, and basic server-side logic with database integration.
                 </p>
                 <div className="flex flex-col lg:flex-row items-center gap-8">
-                    <Button className="font-albert-sans rounded-full uppercase" size="lg" variant="outline">download cv</Button>
+                    <Button className="font-albert-sans rounded-full uppercase" size="lg" variant="outline">
+                        <span>download cv</span>
+                    </Button>
                     <Socials />
                 </div>
             </div>
-            <div className="flex-1 flex items-center justify-center relative">
+            <div className="flex-1 flex items-center justify-center">
                 <motion.div
                     className="absolute"
                     initial={{ opacity: 0 }}

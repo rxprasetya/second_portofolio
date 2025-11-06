@@ -119,9 +119,9 @@ const links = [
 const Resume = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0)
   return (
-    <section className="flex flex-col items-center justify-center gap-4">
-      <h1 className="text-2xl">Why hire me?</h1>
-      <p className="text-muted-foreground text-center">{links[currentIndex].desc}</p>
+    <section className="flex flex-col h-full items-center justify-center gap-4">
+      <h1 className="text-2xl lg:text-3xl">Why hire me?</h1>
+      <p className="text-base lg:text-lg text-muted-foreground text-center">{links[currentIndex].desc}</p>
       <div className="container mx-auto">
         <Tabs defaultValue={links[currentIndex].id} className="flex flex-col lg:flex-row gap-8 md:gap-16">
           <TabsList className="flex flex-col w-full lg:max-w-[380px] mx-auto lg:mx-0 gap-4">
@@ -132,15 +132,15 @@ const Resume = () => {
 
           <TabsContent value={links[0].id} className="w-full">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" } }}>
-              <ScrollArea className="h-[400px]">
+              <ScrollArea className="h-[348px]">
                 <ul className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   {links[0].data.map((row: any, index: number) => (
-                    <li key={index} className="bg-secondary h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
-                      <span className="text-accent text-lg">{row.period}</span>
-                      <h4 className="text-xl min-h-[60px]">{row.position}</h4>
+                    <li key={index} className="bg-secondary  py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
+                      <span className="text-accent text-base lg:text-lg">{row.period}</span>
+                      <h4 className="text-base lg:text-xl mb-5">{row.position}</h4>
                       <div className="flex items-center gap-2">
                         <span className="p-1 rounded-full bg-accent"></span>
-                        <p className="text-muted-foreground">{row.company}</p>
+                        <p className="text-sm lg:text-base text-muted-foreground">{row.company}</p>
                       </div>
                     </li>
                   ))}
@@ -151,15 +151,15 @@ const Resume = () => {
 
           <TabsContent value={links[1].id} className="w-full">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" } }}>
-              <ScrollArea className="h-[400px]">
+              <ScrollArea className="h-[348px]">
                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-8">
                   {links[1].data.map((row: any, index: number) => (
-                    <li key={index} className="bg-secondary h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
-                      <span className="text-accent text-lg">{row.period}</span>
-                      <h4 className="text-xl min-h-[60px]">{row.degree}</h4>
+                    <li key={index} className="bg-secondary py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
+                      <span className="text-accent text-base lg:text-lg">{row.period}</span>
+                      <h4 className="text-base lg:text-xl mb-5">{row.degree}</h4>
                       <div className="flex items-center gap-2">
                         <span className="p-1 rounded-full bg-accent"></span>
-                        <p className="text-muted-foreground">{row.institution}</p>
+                        <p className="text-sm lg:text-base text-muted-foreground">{row.institution}</p>
                       </div>
                     </li>
                   ))}
@@ -170,7 +170,7 @@ const Resume = () => {
 
           <TabsContent value={links[2].id} className="w-full">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" } }}>
-              <ScrollArea className="h-[400px]">
+              <ScrollArea className="h-[348px]">
                 <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
                   {(links[2].data[0] as any).icons.map((icon: any, index: number) => (
                     <li key={index}>
@@ -197,7 +197,7 @@ const Resume = () => {
                 transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" },
               }}
             >
-              <ScrollArea className="h-[400px]">
+              <ScrollArea className="h-[348px]">
                 <ul className="grid grid-cols-1 mx-auto lg:mx-0 gap-4">
                   {Object.entries(links[3].data[0]).map(([key, value], index) => (
                     <li

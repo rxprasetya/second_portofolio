@@ -15,7 +15,7 @@ export const Header = () => {
                     <DesktopNavigation />
                 </div>
 
-                <div className="lg:hidden">
+                <div className="lg:hidden inline-flex mt-auto">
                     <MobileNavigation />
                 </div>
             </div>
