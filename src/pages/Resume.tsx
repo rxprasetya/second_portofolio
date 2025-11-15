@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faReact } from "@fortawesome/free-brands-svg-icons"
+import { faCss3Alt, faGithub, faHtml5, faJsSquare, faLaravel, faNodeJs, faReact } from "@fortawesome/free-brands-svg-icons"
 import {
   Tooltip,
   TooltipContent,
@@ -9,91 +9,96 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { motion } from "motion/react";
+import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 
 const links = [
   {
     id: 1,
     title: "Experience",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt inventore neque ab, omnis quasi laudantium voluptates commodi praesentium optio dignissimos nulla quisquam, ex sapiente dolore! Necessitatibus recusandae perferendis provident quas.",
+    desc: "My journey in software engineering and frontend development has shaped my ability to build fast, user-focused interfaces and maintain scalable codebases. I focus on creating smooth user experiences, collaborating with teams, and continuously improving through modern engineering practices.",
     data: [
       {
-        period: 'Mar 2024 - Apr 2024',
-        company: 'PT. Cheil Jedang Indonesia',
-        position: 'IT Support',
+        period: '10/2018 - 03/2019',
+        company: 'PPPPTK BOE/VEDC Malang',
+        position: 'Software Engineer Intern',
       },
       {
-        period: 'Mar 2024 - Apr 2024',
-        company: 'PT. Cheil Jedang Indonesia',
-        position: 'IT Support',
+        period: '05/2022 - 02/2025',
+        company: 'Institut Teknologi Nasional Malang',
+        position: 'Teaching Assistant - Database Laboratory',
       },
       {
-        period: 'Mar 2024 - Apr 2024',
-        company: 'PT. Cheil Jedang Indonesia',
-        position: 'IT Support',
+        period: '02/2024 - 06/2024',
+        company: 'Kampus Merdeka - Educourse.id',
+        position: 'Frontend Developer',
       },
       {
-        period: 'Mar 2024 - Apr 2024',
+        period: '03/2024 - 04/2024',
         company: 'PT. Cheil Jedang Indonesia',
-        position: 'IT Support',
-      },
-      {
-        period: 'Mar 2024 - Apr 2024',
-        company: 'PT. Cheil Jedang Indonesia',
-        position: 'IT Support',
-      },
-      {
-        period: 'Mar 2024 - Apr 2024',
-        company: 'PT. Cheil Jedang Indonesia',
-        position: 'IT Support',
+        position: 'IT Support Intern',
       },
     ]
   },
   {
     id: 2,
     title: "Education",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt inventore neque ab, omnis quasi laudantium voluptates commodi praesentium optio dignissimos nulla quisquam, ex sapiente dolore! Necessitatibus recusandae perferendis provident quas.",
+    desc: "A summary of my educational background in software engineering and informatics, where I built a strong foundation in programming, system design, and modern web development practices.",
     data: [
+      {
+        period: '2018 - 2021',
+        institution: 'SMK Negeri 1 Pasuruan',
+        degree: 'Software Engineering',
+      },
       {
         period: '2021 - 2025',
         institution: 'Institut Teknologi Nasional Malang',
         degree: 'Bachelor of Informatics Engineering',
+      },
+      {
+        period: '08/2024 - 09/2024',
+        institution: 'English Madany',
+        degree: 'Intermediate English Course',
       }
     ]
   },
   {
     id: 3,
     title: "Skills",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt inventore neque ab, omnis quasi laudantium voluptates commodi praesentium optio dignissimos nulla quisquam, ex sapiente dolore! Necessitatibus recusandae perferendis provident quas.",
+    desc: "A collection of technical skills I use in software engineering and frontend development, focusing on building responsive interfaces, writing clean code, and developing scalable applications.",
     data: [
       {
         icons: [
           {
-            name: "React.js",
-            icon: faReact
+            name: "HTML5",
+            icon: faHtml5
+          },
+          {
+            name: "CSS3",
+            icon: faCss3Alt
+          },
+          {
+            name: "Javascript",
+            icon: faJsSquare
           },
           {
             name: "React.js",
             icon: faReact
           },
           {
-            name: "React.js",
-            icon: faReact
+            name: "Express.js",
+            icon: faNodeJs
+          },
+          {
+            name: "Laravel",
+            icon: faLaravel
+          },
+          {
+            name: "MySQL",
+            icon: faDatabase
           },
           {
             name: "React.js",
-            icon: faReact
-          },
-          {
-            name: "React.js",
-            icon: faReact
-          },
-          {
-            name: "React.js",
-            icon: faReact
-          },
-          {
-            name: "React.js",
-            icon: faReact
+            icon: faGithub
           },
         ]
       }
@@ -102,7 +107,7 @@ const links = [
   {
     id: 4,
     title: "About Me",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt inventore neque ab, omnis quasi laudantium voluptates commodi praesentium optio dignissimos nulla quisquam, ex sapiente dolore! Necessitatibus recusandae perferendis provident quas.",
+    desc: "Passionate about building responsive and user-friendly websites, with experience creating personal projects that emphasize mobile-first design, smooth user experiences, and basic server-side logic with database integration.",
     data: [
       {
         name: "Rafid Artur Prasetya",
@@ -119,7 +124,7 @@ const links = [
 const Resume = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0)
   return (
-    <section className="flex flex-col h-full items-center justify-center gap-4">
+    <section className="flex flex-col items-center justify-center gap-4">
       <h1 className="text-2xl lg:text-3xl">Why hire me?</h1>
       <p className="text-base lg:text-lg text-muted-foreground text-center">{links[currentIndex].desc}</p>
       <div className="container mx-auto">
@@ -132,10 +137,10 @@ const Resume = () => {
 
           <TabsContent value={links[0].id} className="w-full">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" } }}>
-              <ScrollArea className="h-[348px]">
-                <ul className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <ScrollArea className="h-[312px]">
+                <ul className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                   {links[0].data.map((row: any, index: number) => (
-                    <li key={index} className="bg-secondary  py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
+                    <li key={index} className="bg-secondary  py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 text-center sm:text-start">
                       <span className="text-accent text-base lg:text-lg">{row.period}</span>
                       <h4 className="text-base lg:text-xl mb-5">{row.position}</h4>
                       <div className="flex items-center gap-2">
@@ -151,10 +156,10 @@ const Resume = () => {
 
           <TabsContent value={links[1].id} className="w-full">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" } }}>
-              <ScrollArea className="h-[348px]">
-                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+              <ScrollArea className="h-[312px]">
+                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-4">
                   {links[1].data.map((row: any, index: number) => (
-                    <li key={index} className="bg-secondary py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
+                    <li key={index} className="bg-secondary py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 text-center sm:text-start">
                       <span className="text-accent text-base lg:text-lg">{row.period}</span>
                       <h4 className="text-base lg:text-xl mb-5">{row.degree}</h4>
                       <div className="flex items-center gap-2">
@@ -170,7 +175,7 @@ const Resume = () => {
 
           <TabsContent value={links[2].id} className="w-full">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" } }}>
-              <ScrollArea className="h-[348px]">
+              <ScrollArea className="h-[312px]">
                 <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
                   {(links[2].data[0] as any).icons.map((icon: any, index: number) => (
                     <li key={index}>
@@ -197,7 +202,7 @@ const Resume = () => {
                 transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" },
               }}
             >
-              <ScrollArea className="h-[348px]">
+              <ScrollArea className="h-[312px]">
                 <ul className="grid grid-cols-1 mx-auto lg:mx-0 gap-4">
                   {Object.entries(links[3].data[0]).map(([key, value], index) => (
                     <li

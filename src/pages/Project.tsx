@@ -1,31 +1,65 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCss3Alt, faReact } from '@fortawesome/free-brands-svg-icons';
+import { faBootstrap, faCss3Alt, faHtml5, faLaravel } from '@fortawesome/free-brands-svg-icons';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import picture from "../assets/img/profile4.webp";
+import buahin from "../assets/img/mockup_buahin.webp";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "Project 01",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora animi in quisquam blanditiis rerum molestias similique iste exercitationem distinctio.",
-    stacks: [faReact],
-    path: "https://fe-sebaran-penjualan.vercel.app/",
-    photo: picture,
+    title: "Buah.in",
+    desc: "A website built using the AdminLTE template and Laravel. It is used to manage the sales of processed fruit products, such as fruit chips, fruit juices, and more.",
+    icons: [
+      {
+        name: "HTML5",
+        icon: faHtml5
+      },
+      {
+        name: "CSS3",
+        icon: faCss3Alt
+      },
+      {
+        name: "Bootstrap 5",
+        icon: faBootstrap
+      },
+      {
+        name: "Laravel",
+        icon: faLaravel
+      }
+    ],
+    path: "https://github.com/rxprasetya/erp-penjualan-olahan-buah",
+    photo: buahin,
   },
   {
     title: "Project 02",
     desc: "Another example project showcasing interactive UI animations and data visualization with React and Framer Motion.",
-    stacks: [faReact, faCss3Alt],
-    path: "https://fe-sebaran-penjualan.vercel.app/",
-    photo: picture,
+    icons: [
+      {
+        name: "HTML5",
+        icon: faHtml5
+      },
+      {
+        name: "CSS3",
+        icon: faCss3Alt
+      },
+      {
+        name: "Bootstrap 5",
+        icon: faBootstrap
+      },
+      {
+        name: "Laravel",
+        icon: faLaravel
+      }
+    ],
+    path: "https://github.com/rxprasetya/peramalan-stok-trend",
+    photo: "",
   },
 ];
 
@@ -46,7 +80,7 @@ const Project = () => {
   };
 
   return (
-    <section className="h-full flex flex-col gap-8">
+    <section className="flex flex-col gap-8">
       <motion.div
         key={currentIndex}
         initial={{ opacity: 0 }}
@@ -64,8 +98,15 @@ const Project = () => {
             {currentProject.desc}
           </p>
           <div className="flex items-center gap-2 text-3xl">
-            {currentProject.stacks.map((icon, i) => (
-              <FontAwesomeIcon key={i} icon={icon} />
+            {currentProject.icons.map((icon: any, i: number) => (
+              <Tooltip key={i}>
+                <TooltipTrigger>
+                  <FontAwesomeIcon className="hover:text-accent transition-all duration-300" key={i} icon={icon.icon} />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p className="font-albert-sans font-semibold">{icon.name}</p>
+                </TooltipContent>
+              </Tooltip>
             ))}
           </div>
           <hr />
@@ -88,12 +129,8 @@ const Project = () => {
           </Link>
         </div>
 
-        <div className="h-full flex-1 flex lg:flex-col w-full justify-between gap-4 order-1 lg:order-0">
-          <img
-            className="w-full max-h-[412px] object-cover rounded-xl"
-            src={currentProject.photo}
-            alt={`Preview of ${currentProject.title}`}
-          />
+        <div className="h-full flex-1 flex lg:flex-col w-full lg:justify-between gap-4 order-1 lg:order-0 box-border py-0 ">
+          <div className="bg-cover bg-center w-full h-[256px] lg:h-[412px] drop-shadow-[0px_16px_72px] drop-shadow-accent/30" style={{ backgroundImage: `url(${currentProject.photo})` }} />
           <motion.div
             initial={{ opacity: 0 }}
             animate={{

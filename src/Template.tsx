@@ -13,7 +13,7 @@ const Template = ({ children }: TemplateProps) => {
             <PageTransition children={
                 <>
                     <Header />
-                    <main className="container w-full h-full lg:w-screen lg:h-screen mx-auto box-border py-20 px-4 sm:px-0">
+                    <main className="container w-full h-full mx-auto box-border pt-32 lg:pt-24 pb-8 px-4 sm:px-0">
                         {children}
                     </main>
                 </>

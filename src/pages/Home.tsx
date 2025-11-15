@@ -1,12 +1,12 @@
 import { motion } from "motion/react"
-import profile from "./../assets/img/profile4.webp"
+import profile from "./../assets/img/profile.webp"
 import { Button } from "@/components/ui/button"
 import Socials from "../components/Socials"
 
 const Home = () => {
     return (
         <section className="flex flex-col lg:flex-row h-full items-center justify-center gap-6">
-            <div className="flex-1 flex flex-col text-center lg:text-start gap-2 lg:gap-4 order-2 lg:order-0">
+            <div className="flex-1 flex flex-col text-center h-full lg:text-start gap-2 lg:gap-4 order-2 lg:order-0">
                 <h4 className="text-xl">Software Engineering</h4>
                 <h1 className="text-4xl lg:text-5xl">Hello, I'm</h1>
                 <h1 className="text-4xl lg:text-5xl text-accent">Rafid Artur Prasetya</h1>
@@ -20,7 +20,7 @@ const Home = () => {
                     <Socials />
                 </div>
             </div>
-            <div className="flex-1 flex items-center justify-center">
+            <div className="h-full flex-1 flex items-center justify-center">
                 <motion.div
                     className="absolute"
                     initial={{ opacity: 0 }}
@@ -33,7 +33,9 @@ const Home = () => {
                         }
                     }}
                 >
-                    <img className="w-[298px] h-[298px] lg:w-[398px] lg:h-[398px] object-contain rounded-full order-1 lg:order-0 mix-blend-luminosity" src={profile} alt="Portrait of Rafid Artur Prasetya" />
+                    <div className="w-[298px] h-[298px] lg:w-[398px] lg:h-[398px] rounded-full overflow-hidden">
+                        <div className="w-[102.5%] h-[110%] bg-cover bg-center" style={{ backgroundImage: `url(${profile})` }} />
+                    </div>
                 </motion.div>
 
                 <motion.svg
