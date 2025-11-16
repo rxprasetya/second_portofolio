@@ -37,6 +37,11 @@ const links = [
         company: 'PT. Cheil Jedang Indonesia',
         position: 'IT Support Intern',
       },
+      {
+        period: '04/2025 - Present',
+        company: 'Freelance',
+        position: 'Fullstack Developer',
+      },
     ]
   },
   {
@@ -53,6 +58,11 @@ const links = [
         period: '2021 - 2025',
         institution: 'Institut Teknologi Nasional Malang',
         degree: 'Bachelor of Informatics Engineering',
+      },
+      {
+        period: '08/2024 - 09/2024',
+        institution: 'English Madany',
+        degree: 'Basic English Course',
       },
       {
         period: '08/2024 - 09/2024',

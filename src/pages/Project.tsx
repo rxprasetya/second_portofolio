@@ -1,21 +1,24 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBootstrap, faCss3Alt, faHtml5, faLaravel } from '@fortawesome/free-brands-svg-icons';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faBootstrap, faCss, faCss3Alt, faHtml5, faLaravel, faNodeJs, faReact } from '@fortawesome/free-brands-svg-icons';
+import { faChevronRight, faDatabase } from '@fortawesome/free-solid-svg-icons';
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import buahin from "../assets/img/mockup_buahin.webp";
+import stockin from "../assets/img/mockup_stockin.webp";
+import ticketin from "../assets/img/mockup_ticketin.webp";
+import mapin from "../assets/img/mockup_mapin.webp";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 
 const projects = [
   {
     title: "Buah.in",
-    desc: "A website built using the AdminLTE template and Laravel. It is used to manage the sales of processed fruit products, such as fruit chips, fruit juices, and more.",
+    desc: "A dashboard website built using the AdminLTE template and Laravel. It is used to manage the sales of processed fruit products, such as fruit chips, fruit juices, and more.",
     icons: [
       {
         name: "HTML5",
@@ -38,8 +41,8 @@ const projects = [
     photo: buahin,
   },
   {
-    title: "Project 02",
-    desc: "Another example project showcasing interactive UI animations and data visualization with React and Framer Motion.",
+    title: "Stock.in",
+    desc: "A dashboard website built using the Mazzer template and Laravel. It is used to forecast stock in a grocery store using the Trend Moment method.",
     icons: [
       {
         name: "HTML5",
@@ -59,7 +62,63 @@ const projects = [
       }
     ],
     path: "https://github.com/rxprasetya/peramalan-stok-trend",
-    photo: "",
+    photo: stockin,
+  },
+  {
+    title: "Ticket.in",
+    desc: "A information system dashboard website built with AdminLTE template and Laravel. It is used to Booking Transportation Ticket. The system allows users to manage ticket bookings, view schedules, and monitor customer data efficiently.",
+    icons: [
+      {
+        name: "HTML5",
+        icon: faHtml5
+      },
+      {
+        name: "CSS3",
+        icon: faCss3Alt
+      },
+      {
+        name: "Bootstrap 5",
+        icon: faBootstrap
+      },
+      {
+        name: "Laravel",
+        icon: faLaravel
+      }
+    ],
+    path: "https://github.com/rxprasetya/SI-Tiket-Transportasi",
+    photo: ticketin,
+  },
+  {
+    title: "Map.in",
+    desc: "A dashboard website built with Mazzer template, Vite and React.js for a Dynamic Cigarette Sales Mapping. Placing sales in certain areas to market products to retailers in that area.",
+    icons: [
+      {
+        name: "HTML5",
+        icon: faHtml5
+      },
+      {
+        name: "CSS3",
+        icon: faCss3Alt
+      },
+      {
+        name: "Tailwind CSS",
+        icon: faCss
+      },
+      {
+        name: "React.js",
+        icon: faReact
+      },
+      {
+        name: "Express.js",
+        icon: faNodeJs
+      },
+      {
+        name: "MySQL",
+        icon: faDatabase
+      }
+    ],
+    path: "https://github.com/rxprasetya/",
+    photo: mapin,
   },
 ];
 
@@ -81,15 +140,15 @@ const Project = () => {
 
   return (
     <section className="flex flex-col gap-8">
-      <motion.div
-        key={currentIndex}
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: 1,
-          transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" },
-        }}
-        className="h-full flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-16">
-        <div className="flex-1 flex flex-col gap-8 order-2 lg:order-0">
+      <div className="h-full flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-16">
+        <motion.div
+          key={currentIndex}
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" },
+          }}
+          className="flex-1 flex flex-col gap-8 order-2 lg:order-0">
           <h1 className="text-6xl lg:text-8xl font-aboreto">
             {currentIndex < 9 && "0"}{currentIndex + 1}
           </h1>
@@ -127,10 +186,19 @@ const Project = () => {
               </TooltipContent>
             </Tooltip>
           </Link>
-        </div>
+        </motion.div>
 
         <div className="h-full flex-1 flex lg:flex-col w-full lg:justify-between gap-4 order-1 lg:order-0 box-border py-0 ">
-          <div className="bg-cover bg-center w-full h-[256px] lg:h-[412px] drop-shadow-[0px_16px_72px] drop-shadow-accent/30" style={{ backgroundImage: `url(${currentProject.photo})` }} />
+          {/* <div className="w-full h-full flex items-center justify-center"> */}
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" },
+            }}
+            className="bg-cover bg-center w-full min-h-[256px] xs:min-h-[364px] sm:min-h-[432px] lg:min-h-[396px] xl:min-h-[400px] 2xl:min-h-[512px] drop-shadow-[0px_16px_72px] drop-shadow-accent/30" style={{ backgroundImage: `url(${currentProject.photo})` }} />
+          {/* </div> */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{
@@ -155,7 +223,7 @@ const Project = () => {
             </Button>
           </motion.div>
         </div>
-      </motion.div>
+      </div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
@@ -179,7 +247,7 @@ const Project = () => {
           Next
         </Button>
       </motion.div>
-    </section>
+    </section >
   );
 };
 
