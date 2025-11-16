@@ -107,7 +107,7 @@ const links = [
             icon: faDatabase
           },
           {
-            name: "React.js",
+            name: "GitHub",
             icon: faGithub
           },
         ]
