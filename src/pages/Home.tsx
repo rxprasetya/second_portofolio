@@ -2,6 +2,7 @@ import { motion } from "motion/react"
 import profile from "./../assets/img/profile.webp"
 import { Button } from "@/components/ui/button"
 import Socials from "../components/Socials"
+import { Link } from "react-router-dom"
 
 const Home = () => {
     return (
@@ -14,9 +15,11 @@ const Home = () => {
                     I'm passionate about creating responsive, clean, and user-friendly websites. I've developed a personal portfolio and several small projects that focus on mobile-friendly design and smooth user experiences, and basic server-side logic with database integration.
                 </p>
                 <div className="flex flex-col lg:flex-row items-center gap-8">
-                    <Button className="font-albert-sans rounded-full uppercase" size="lg" variant="outline">
-                        <span>download cv</span>
-                    </Button>
+                    <Link to={`/resume`}>
+                        <Button className="font-albert-sans rounded-full uppercase" size="lg" variant="outline">
+                            Let's Dive Into It
+                        </Button>
+                    </Link>
                     <Socials />
                 </div>
             </div>

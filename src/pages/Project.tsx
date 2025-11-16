@@ -11,7 +11,7 @@ import {
 import buahin from "../assets/img/mockup_buahin.webp";
 import stockin from "../assets/img/mockup_stockin.webp";
 import ticketin from "../assets/img/mockup_ticketin.webp";
-import mapin from "../assets/img/mockup_mapin.webp";
+import sebarin from "../assets/img/mockup_mapin.webp";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 
@@ -89,7 +89,7 @@ const projects = [
     photo: ticketin,
   },
   {
-    title: "Map.in",
+    title: "Sebar.in",
     desc: "A dashboard website built with Mazzer template, Vite and React.js for a Dynamic Cigarette Sales Mapping. Placing sales in certain areas to market products to retailers in that area.",
     icons: [
       {
@@ -118,7 +118,7 @@ const projects = [
       }
     ],
     path: "https://github.com/rxprasetya/",
-    photo: mapin,
+    photo: sebarin,
   },
 ];
 

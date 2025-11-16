@@ -16,7 +16,7 @@ const links = [
     },
     {
         name: "LinkedIn",
-        path: "https://www.linkedin.com/in/rafid-artur-prasetya-4a0473272/",
+        path: "https://www.linkedin.com/in/rafid-artur-prasetya/",
         icon: faLinkedinIn
     }
 ]
