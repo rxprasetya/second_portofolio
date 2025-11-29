@@ -9,9 +9,10 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-accent text-primary hover:bg-accent/80",
+        default: "bg-primary text-background hover:bg-primary/80",
         primary: "bg-secondary text-secondary-foreground",
-        outline: "border border-accent bg-transparent text-accent shadow-xs hover:bg-accent hover:text-primary",
+        outline: "border border-primary bg-transparent text-primary shadow-xs hover:bg-primary hover:text-background",
+        ghost: "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",

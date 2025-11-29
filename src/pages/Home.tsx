@@ -1,7 +1,7 @@
 import { motion } from "motion/react"
 import profile from "./../assets/img/profile.webp"
 import { Button } from "@/components/ui/button"
-import Socials from "../components/Socials"
+import Socials from "../components/common/Socials"
 import { Link } from "react-router-dom"
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
             <div className="flex-1 flex flex-col text-center h-full lg:text-start gap-2 lg:gap-4 order-2 lg:order-0">
                 <h4 className="text-xl">Software Engineering</h4>
                 <h1 className="text-4xl lg:text-5xl">Hello, I'm</h1>
-                <h1 className="text-4xl lg:text-5xl text-accent">Rafid Artur Prasetya</h1>
+                <h1 className="text-4xl lg:text-5xl text-primary">Rafid Artur Prasetya</h1>
                 <p className="text-base lg:text-lg text-muted-foreground lg:text-justify">
                     I'm passionate about creating responsive, clean, and user-friendly websites. I've developed a personal portfolio and several small projects that focus on mobile-friendly design and smooth user experiences, and basic server-side logic with database integration.
                 </p>
@@ -30,7 +30,6 @@ const Home = () => {
                     animate={{
                         opacity: 1,
                         transition: {
-                            delay: 0.4,
                             duration: 0.4,
                             ease: "easeInOut"
                         }
@@ -46,7 +45,6 @@ const Home = () => {
                     animate={{
                         opacity: 1,
                         transition: {
-                            delay: 0.4,
                             duration: 0.4,
                             ease: "easeInOut"
                         }

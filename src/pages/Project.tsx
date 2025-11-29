@@ -179,13 +179,13 @@ const Project = () => {
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" },
+            transition: { duration: 0.4, ease: "easeInOut" },
           }}
           className="flex-1 flex flex-col gap-8 order-2 lg:order-0">
           <h1 className="text-6xl lg:text-8xl font-aboreto">
             {currentIndex < 9 && "0"}{currentIndex + 1}
           </h1>
-          <h1 className="text-4xl lg:text-5xl text-accent">{currentProject.title}</h1>
+          <h1 className="text-4xl lg:text-5xl text-primary">{currentProject.title}</h1>
           <p className="text-base lg:text-lg text-muted-foreground text-justify">
             {currentProject.desc}
           </p>
@@ -193,7 +193,7 @@ const Project = () => {
             {currentProject.icons.map((icon: any, i: number) => (
               <Tooltip key={i}>
                 <TooltipTrigger>
-                  <FontAwesomeIcon className="hover:text-accent transition-all duration-300" key={i} icon={icon.icon} />
+                  <FontAwesomeIcon className="hover:text-primary transition-all duration-300" key={i} icon={icon.icon} />
                 </TooltipTrigger>
                 <TooltipContent>
                   <p className="font-albert-sans font-semibold">{icon.name}</p>
@@ -203,7 +203,7 @@ const Project = () => {
           </div>
           <hr />
           <Link
-            className="px-4 py-1 bg-secondary rounded-full flex items-center justify-center text-base ml-auto hover:text-accent transition-all duration-300"
+            className="px-4 py-1 bg-secondary rounded-full flex items-center justify-center text-base ml-auto hover:text-primary transition-all duration-300"
             to={currentProject.path}
             target="_blank"
           >
@@ -228,15 +228,15 @@ const Project = () => {
             initial={{ opacity: 0 }}
             animate={{
               opacity: 1,
-              transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" },
+              transition: { duration: 0.4, ease: "easeInOut" },
             }}
-            className="bg-cover bg-center w-full min-h-64 xs:min-h-[364px] sm:min-h-[432px] lg:min-h-[396px] xl:min-h-[400px] 2xl:min-h-[512px] drop-shadow-[0px_16px_72px] drop-shadow-accent/30" style={{ backgroundImage: `url(${currentProject.photo})` }} />
+            className="bg-cover bg-center w-full min-h-64 xs:min-h-[364px] sm:min-h-[432px] lg:min-h-[396px] xl:min-h-[400px] 2xl:min-h-[512px] drop-shadow-[0px_16px_72px] drop-shadow-primary/30" style={{ backgroundImage: `url(${currentProject.photo})` }} />
           {/* </div> */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{
               opacity: 1,
-              transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" },
+              transition: { duration: 0.4, ease: "easeInOut" },
             }} className="hidden w-full lg:flex justify-end gap-2">
             <Button
               variant="outline"
@@ -261,7 +261,7 @@ const Project = () => {
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
-          transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" },
+          transition: { duration: 0.4, ease: "easeInOut" },
         }} className="lg:hidden w-full flex justify-between gap-2">
         <Button
           variant="outline"

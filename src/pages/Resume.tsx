@@ -138,23 +138,23 @@ const Resume = () => {
       <h1 className="text-2xl lg:text-3xl">Why hire me?</h1>
       <p className="text-base lg:text-lg text-muted-foreground text-center">{links[currentIndex].desc}</p>
       <div className="container mx-auto">
-        <Tabs defaultValue={links[currentIndex].id} className="flex flex-col lg:flex-row gap-8 md:gap-16">
+        <Tabs defaultValue={`${links[currentIndex].id}`} className="flex flex-col lg:flex-row gap-8 md:gap-16">
           <TabsList className="flex flex-col w-full lg:max-w-[380px] mx-auto lg:mx-0 gap-4">
             {links.map((link) => (
-              <TabsTrigger key={link.id} value={link.id} onClick={() => setCurrentIndex(link.id - 1)}>{link.title}</TabsTrigger>
+              <TabsTrigger key={link.id} value={`${link.id}`} onClick={() => setCurrentIndex(link.id - 1)}>{link.title}</TabsTrigger>
             ))}
           </TabsList>
 
-          <TabsContent value={links[0].id} className="w-full">
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" } }}>
+          <TabsContent value={`${links[0].id}`} className="w-full">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.4, ease: "easeInOut" } }}>
               <ScrollArea className="h-[312px]">
                 <ul className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                   {links[0].data.map((row: any, index: number) => (
                     <li key={index} className="bg-secondary  py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 text-center sm:text-start">
-                      <span className="text-accent text-base lg:text-lg">{row.period}</span>
+                      <span className="text-primary text-base lg:text-lg">{row.period}</span>
                       <h4 className="text-base lg:text-xl mb-5">{row.position}</h4>
                       <div className="flex items-center gap-2">
-                        <span className="p-1 rounded-full bg-accent"></span>
+                        <span className="p-1 rounded-full bg-primary"></span>
                         <p className="text-sm lg:text-base text-muted-foreground">{row.company}</p>
                       </div>
                     </li>
@@ -164,16 +164,16 @@ const Resume = () => {
             </motion.div>
           </TabsContent>
 
-          <TabsContent value={links[1].id} className="w-full">
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" } }}>
+          <TabsContent value={`${links[1].id}`} className="w-full">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.4, ease: "easeInOut" } }}>
               <ScrollArea className="h-[312px]">
                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-4">
                   {links[1].data.map((row: any, index: number) => (
                     <li key={index} className="bg-secondary py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 text-center sm:text-start">
-                      <span className="text-accent text-base lg:text-lg">{row.period}</span>
+                      <span className="text-primary text-base lg:text-lg">{row.period}</span>
                       <h4 className="text-base lg:text-xl mb-5">{row.degree}</h4>
                       <div className="flex items-center gap-2">
-                        <span className="p-1 rounded-full bg-accent"></span>
+                        <span className="p-1 rounded-full bg-primary"></span>
                         <p className="text-sm lg:text-base text-muted-foreground">{row.institution}</p>
                       </div>
                     </li>
@@ -183,15 +183,15 @@ const Resume = () => {
             </motion.div>
           </TabsContent>
 
-          <TabsContent value={links[2].id} className="w-full">
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" } }}>
+          <TabsContent value={`${links[2].id}`} className="w-full">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.4, ease: "easeInOut" } }}>
               <ScrollArea className="h-[312px]">
                 <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
                   {(links[2].data[0] as any).icons.map((icon: any, index: number) => (
                     <li key={index}>
                       <Tooltip>
-                        <TooltipTrigger className="w-full h-[128px] bg-secondary rounded-xl flex justify-center items-center">
-                          <FontAwesomeIcon className="text-6xl hover:text-accent hover:transition-all duration-300" icon={icon.icon} />
+                        <TooltipTrigger className="w-full h-32 bg-secondary rounded-xl flex justify-center items-center hover:text-primary">
+                          <FontAwesomeIcon className="text-6xl hover:transition-all duration-300" icon={icon.icon} />
                         </TooltipTrigger>
                         <TooltipContent>
                           <p className="font-albert-sans font-semibold">{icon.name}</p>
@@ -204,12 +204,12 @@ const Resume = () => {
             </motion.div>
           </TabsContent>
 
-          <TabsContent value={links[3].id} className="w-full">
+          <TabsContent value={`${links[3].id}`} className="w-full">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{
                 opacity: 1,
-                transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" },
+                transition: { duration: 0.4, ease: "easeInOut" },
               }}
             >
               <ScrollArea className="h-[312px]">
