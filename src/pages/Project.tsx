@@ -12,6 +12,7 @@ import buahin from "../assets/img/mockup_buahin.webp";
 import stockin from "../assets/img/mockup_stockin.webp";
 import ticketin from "../assets/img/mockup_ticketin.webp";
 import sebarin from "../assets/img/mockup_mapin.webp";
+import simpanin from "../assets/img/mockup_simpanin.webp";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 
@@ -120,6 +121,38 @@ const projects = [
     path: "https://github.com/rxprasetya/",
     photo: sebarin,
   },
+  {
+    title: "Simpan.in",
+    desc: "A full-stack dashboard built with Vite, React.js, Shadcn UI, Tailwind CSS, integrated with a backend using Node.js. Includes product/category management, smart filtering, and real-time data handling.",
+    icons: [
+      {
+        name: "HTML5",
+        icon: faHtml5
+      },
+      {
+        name: "CSS3",
+        icon: faCss3Alt
+      },
+      {
+        name: "Tailwind CSS",
+        icon: faCss
+      },
+      {
+        name: "React.js",
+        icon: faReact
+      },
+      {
+        name: "Node.js",
+        icon: faNodeJs
+      },
+      {
+        name: "MySQL",
+        icon: faDatabase
+      }
+    ],
+    path: "https://fe-management-inventory.vercel.app",
+    photo: simpanin,
+  },
 ];
 
 const Project = () => {
@@ -197,7 +230,7 @@ const Project = () => {
               opacity: 1,
               transition: { delay: 0.4, duration: 0.4, ease: "easeInOut" },
             }}
-            className="bg-cover bg-center w-full min-h-[256px] xs:min-h-[364px] sm:min-h-[432px] lg:min-h-[396px] xl:min-h-[400px] 2xl:min-h-[512px] drop-shadow-[0px_16px_72px] drop-shadow-accent/30" style={{ backgroundImage: `url(${currentProject.photo})` }} />
+            className="bg-cover bg-center w-full min-h-64 xs:min-h-[364px] sm:min-h-[432px] lg:min-h-[396px] xl:min-h-[400px] 2xl:min-h-[512px] drop-shadow-[0px_16px_72px] drop-shadow-accent/30" style={{ backgroundImage: `url(${currentProject.photo})` }} />
           {/* </div> */}
           <motion.div
             initial={{ opacity: 0 }}
