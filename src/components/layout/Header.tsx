@@ -7,7 +7,7 @@ export const Header = () => {
     return (
         <header className="py-4 px-4 sm:px-0 fixed left-0 top-0 right-0 z-50 bg-background lg:bg-transparent container mx-auto">
             <div className="flex items-center justify-between">
-                <div className="lg:hidden inline-flex mt-auto">
+                <div className="lg:hidden inline-flex">
                     <MobileNavigation />
                 </div>
 

@@ -1,6 +1,4 @@
 import { useState } from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCss3Alt, faGithub, faHtml5, faJsSquare, faLaravel, faNodeJs, faReact } from "@fortawesome/free-brands-svg-icons"
 import {
   Tooltip,
   TooltipContent,
@@ -9,7 +7,8 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { motion } from "motion/react";
-import { faDatabase } from "@fortawesome/free-solid-svg-icons";
+import { SiExpress, SiMysql } from "react-icons/si"
+import { FaCss3, FaGithub, FaHtml5, FaJsSquare, FaLaravel, FaNodeJs, FaReact } from "react-icons/fa"
 
 const links = [
   {
@@ -80,35 +79,39 @@ const links = [
         icons: [
           {
             name: "HTML5",
-            icon: faHtml5
+            icon: <FaHtml5 />
           },
           {
             name: "CSS3",
-            icon: faCss3Alt
+            icon: <FaCss3 />
           },
           {
             name: "Javascript",
-            icon: faJsSquare
+            icon: <FaJsSquare />
           },
           {
             name: "React.js",
-            icon: faReact
+            icon: <FaReact />
+          },
+          {
+            name: "Node.js",
+            icon: <FaNodeJs />
           },
           {
             name: "Express.js",
-            icon: faNodeJs
+            icon: <SiExpress />
           },
           {
             name: "Laravel",
-            icon: faLaravel
+            icon: <FaLaravel />
           },
           {
             name: "MySQL",
-            icon: faDatabase
+            icon: <SiMysql />,
           },
           {
             name: "GitHub",
-            icon: faGithub
+            icon: <FaGithub />
           },
         ]
       }
@@ -191,7 +194,9 @@ const Resume = () => {
                     <li key={index}>
                       <Tooltip>
                         <TooltipTrigger className="w-full h-32 bg-secondary rounded-xl flex justify-center items-center hover:text-primary">
-                          <FontAwesomeIcon className="text-6xl hover:transition-all duration-300" icon={icon.icon} />
+                          <div className="text-6xl hover:transition-all duration-300">
+                            {icon.icon}
+                          </div>
                         </TooltipTrigger>
                         <TooltipContent>
                           <p className="font-albert-sans font-semibold">{icon.name}</p>

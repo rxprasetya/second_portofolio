@@ -1,8 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBootstrap, faCss, faCss3Alt, faHtml5, faLaravel, faNodeJs, faReact } from '@fortawesome/free-brands-svg-icons';
-import { faChevronRight, faDatabase } from '@fortawesome/free-solid-svg-icons';
 import {
   Tooltip,
   TooltipContent,
@@ -15,6 +12,8 @@ import sebarin from "../assets/img/mockup_mapin.webp";
 import simpanin from "../assets/img/mockup_simpanin.webp";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
+import { FaBootstrap, FaChevronRight, FaCss3Alt, FaGithub, FaHtml5, FaLaravel, FaNodeJs, FaReact } from "react-icons/fa";
+import { SiExpress, SiMysql, SiTailwindcss } from "react-icons/si";
 
 const projects = [
   {
@@ -23,22 +22,23 @@ const projects = [
     icons: [
       {
         name: "HTML5",
-        icon: faHtml5
+        icon: <FaHtml5 />
       },
       {
         name: "CSS3",
-        icon: faCss3Alt
+        icon: <FaCss3Alt />
       },
       {
         name: "Bootstrap 5",
-        icon: faBootstrap
+        icon: <FaBootstrap />
       },
       {
         name: "Laravel",
-        icon: faLaravel
+        icon: <FaLaravel />
       }
     ],
-    path: "https://github.com/rxprasetya/erp-penjualan-olahan-buah",
+    github: "https://github.com/rxprasetya/erp-penjualan-olahan-buah",
+    demo: "",
     photo: buahin,
   },
   {
@@ -47,22 +47,23 @@ const projects = [
     icons: [
       {
         name: "HTML5",
-        icon: faHtml5
+        icon: <FaHtml5 />
       },
       {
         name: "CSS3",
-        icon: faCss3Alt
+        icon: <FaCss3Alt />
       },
       {
         name: "Bootstrap 5",
-        icon: faBootstrap
+        icon: <FaBootstrap />
       },
       {
         name: "Laravel",
-        icon: faLaravel
+        icon: <FaLaravel />
       }
     ],
-    path: "https://github.com/rxprasetya/peramalan-stok-trend",
+    github: "https://github.com/rxprasetya/peramalan-stok-trend",
+    demo: "",
     photo: stockin,
   },
   {
@@ -71,22 +72,23 @@ const projects = [
     icons: [
       {
         name: "HTML5",
-        icon: faHtml5
+        icon: <FaHtml5 />
       },
       {
         name: "CSS3",
-        icon: faCss3Alt
+        icon: <FaCss3Alt />
       },
       {
         name: "Bootstrap 5",
-        icon: faBootstrap
+        icon: <FaBootstrap />
       },
       {
         name: "Laravel",
-        icon: faLaravel
+        icon: <FaLaravel />
       }
     ],
-    path: "https://github.com/rxprasetya/SI-Tiket-Transportasi",
+    github: "https://github.com/rxprasetya/SI-Tiket-Transportasi",
+    demo: "",
     photo: ticketin,
   },
   {
@@ -95,30 +97,31 @@ const projects = [
     icons: [
       {
         name: "HTML5",
-        icon: faHtml5
+        icon: <FaHtml5 />
       },
       {
         name: "CSS3",
-        icon: faCss3Alt
+        icon: <FaCss3Alt />
       },
       {
         name: "Tailwind CSS",
-        icon: faCss
+        icon: <SiTailwindcss />
       },
       {
         name: "React.js",
-        icon: faReact
+        icon: <FaReact />
       },
       {
         name: "Express.js",
-        icon: faNodeJs
+        icon: <SiExpress />
       },
       {
         name: "MySQL",
-        icon: faDatabase
+        icon: <SiMysql />
       }
     ],
-    path: "https://github.com/rxprasetya/",
+    github: "https://github.com/rxprasetya/",
+    demo: "",
     photo: sebarin,
   },
   {
@@ -127,30 +130,31 @@ const projects = [
     icons: [
       {
         name: "HTML5",
-        icon: faHtml5
+        icon: <FaHtml5 />
       },
       {
         name: "CSS3",
-        icon: faCss3Alt
+        icon: <FaCss3Alt />
       },
       {
         name: "Tailwind CSS",
-        icon: faCss
+        icon: <SiTailwindcss />
       },
       {
         name: "React.js",
-        icon: faReact
+        icon: <FaReact />
       },
       {
         name: "Node.js",
-        icon: faNodeJs
+        icon: <FaNodeJs />
       },
       {
         name: "MySQL",
-        icon: faDatabase
+        icon: <SiMysql />
       }
     ],
-    path: "https://fe-management-inventory.vercel.app",
+    github: "https://github.com/rxprasetya/fe-management-inventory",
+    demo: "https://fe-management-inventory.vercel.app",
     photo: simpanin,
   },
 ];
@@ -181,7 +185,7 @@ const Project = () => {
             opacity: 1,
             transition: { duration: 0.4, ease: "easeInOut" },
           }}
-          className="flex-1 flex flex-col gap-8 order-2 lg:order-0">
+          className="flex-1 flex flex-col gap-4 order-2 lg:order-0">
           <h1 className="text-6xl lg:text-8xl font-aboreto">
             {currentIndex < 9 && "0"}{currentIndex + 1}
           </h1>
@@ -189,11 +193,13 @@ const Project = () => {
           <p className="text-base lg:text-lg text-muted-foreground text-justify">
             {currentProject.desc}
           </p>
-          <div className="flex items-center gap-2 text-3xl">
+          <div className="flex items-center gap-4 text-3xl">
             {currentProject.icons.map((icon: any, i: number) => (
               <Tooltip key={i}>
                 <TooltipTrigger>
-                  <FontAwesomeIcon className="hover:text-primary transition-all duration-300" key={i} icon={icon.icon} />
+                  <div className="hover:text-primary transition-all duration-300">
+                    {icon.icon}
+                  </div>
                 </TooltipTrigger>
                 <TooltipContent>
                   <p className="font-albert-sans font-semibold">{icon.name}</p>
@@ -202,23 +208,43 @@ const Project = () => {
             ))}
           </div>
           <hr />
-          <Link
-            className="px-4 py-1 bg-secondary rounded-full flex items-center justify-center text-base ml-auto hover:text-primary transition-all duration-300"
-            to={currentProject.path}
-            target="_blank"
-          >
-            <Tooltip>
-              <TooltipTrigger className="flex items-center justify-center gap-2">
-                <span className="text-base lg:text-lg">
-                  Tap to see
-                </span>
-                <FontAwesomeIcon icon={faChevronRight} />
-              </TooltipTrigger>
-              <TooltipContent>
-                <p className="font-albert-sans font-semibold">Live Demo</p>
-              </TooltipContent>
-            </Tooltip>
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              className="p-2 bg-secondary/90 rounded-full flex items-center justify-center text-2xl hover:text-primary transition-all duration-300"
+              to={currentProject.github}
+              target="_blank"
+            >
+              <Tooltip>
+                <TooltipTrigger className="flex items-center justify-center gap-2">
+                  <FaGithub />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p className="font-albert-sans font-semibold">Visit GitHub</p>
+                </TooltipContent>
+              </Tooltip>
+            </Link>
+            {currentProject.demo &&
+              <Link
+                className="px-4 py-1 bg-secondary/90 rounded-full flex items-center justify-center text-base hover:text-primary transition-all duration-300 group"
+                to={currentProject.demo}
+                target="_blank"
+              >
+                <Tooltip>
+                  <TooltipTrigger className="flex items-center justify-center gap-2">
+                    <span className="text-base lg:text-lg">
+                      Tap to see
+                    </span>
+                    <div className="group-hover:rotate-90 transition-all duration-300">
+                      <FaChevronRight />
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p className="font-albert-sans font-semibold">Live Demo</p>
+                  </TooltipContent>
+                </Tooltip>
+              </Link>
+            }
+          </div>
         </motion.div>
 
         <div className="h-full flex-1 flex lg:flex-col w-full lg:justify-between gap-4 order-1 lg:order-0 box-border py-0 ">

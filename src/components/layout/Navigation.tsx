@@ -7,9 +7,8 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBars } from "@fortawesome/free-solid-svg-icons"
 import Logo from "../common/Logo"
+import { FaBars } from "react-icons/fa"
 
 const links = [
     {
@@ -42,7 +41,7 @@ export const MobileNavigation = () => {
     return (
         <Sheet>
             <SheetTrigger asChild>
-                <FontAwesomeIcon className="text-xl" icon={faBars} />
+                <FaBars className="text-xl" />
             </SheetTrigger>
             <SheetContent className="flex flex-col gap-16 justify-center items-center">
                 <SheetHeader className="hidden">

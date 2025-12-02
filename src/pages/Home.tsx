@@ -5,6 +5,7 @@ import Socials from "../components/common/Socials"
 import { Link } from "react-router-dom"
 
 const Home = () => {
+    const theme = localStorage.getItem("vite-ui-theme")
     return (
         <section className="flex flex-col lg:flex-row h-full items-center justify-center gap-6">
             <div className="flex-1 flex flex-col text-center h-full lg:text-start gap-2 lg:gap-4 order-2 lg:order-0">
@@ -50,7 +51,7 @@ const Home = () => {
                         }
                     }}
                     className={`w-[318px] h-[318px] lg:w-[420px] lg:h-[420px]`} fill={`transparent`} viewBox={`0 0 406 406`} xmlns={`http://www.w3.org/2000/svg`}>
-                    <motion.circle cx={`203`} cy={`203`} r={`200`} stroke={`#00FF99`} strokeWidth={`4`} strokeLinecap={`round`} strokeLinejoin={`round`} initial={{ strokeDasharray: "24 10 0 0" }} animate={{
+                    <motion.circle cx={`203`} cy={`203`} r={`200`} stroke={`${theme === "dark" ? "#00FF99" : "#00ba63"}`} strokeWidth={`4`} strokeLinecap={`round`} strokeLinejoin={`round`} initial={{ strokeDasharray: "24 10 0 0" }} animate={{
                         strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 22 22"],
                         rotate: [120, 360]
                     }}
