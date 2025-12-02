@@ -35,6 +35,10 @@ const projects = [
       {
         name: "Laravel",
         icon: <FaLaravel />
+      },
+      {
+        name: "MySQL",
+        icon: <SiMysql />
       }
     ],
     github: "https://github.com/rxprasetya/erp-penjualan-olahan-buah",
@@ -60,6 +64,10 @@ const projects = [
       {
         name: "Laravel",
         icon: <FaLaravel />
+      },
+      {
+        name: "MySQL",
+        icon: <SiMysql />
       }
     ],
     github: "https://github.com/rxprasetya/peramalan-stok-trend",
@@ -85,6 +93,10 @@ const projects = [
       {
         name: "Laravel",
         icon: <FaLaravel />
+      },
+      {
+        name: "MySQL",
+        icon: <SiMysql />
       }
     ],
     github: "https://github.com/rxprasetya/SI-Tiket-Transportasi",
