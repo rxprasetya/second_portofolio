@@ -2,11 +2,7 @@ import { AnimatePresence, motion } from "motion/react"
 import type { ReactNode } from "react"
 import { useLocation } from "react-router-dom"
 
-type PageTransitionProps = {
-    children: ReactNode
-}
-
-const PageTransition = ({ children }: PageTransitionProps) => {
+const PageTransition = ({ children }: { children: ReactNode }) => {
     const pathname = useLocation().pathname
     return (
         <AnimatePresence>
@@ -16,11 +12,12 @@ const PageTransition = ({ children }: PageTransitionProps) => {
                     animate={{
                         opacity: 0,
                         transition: {
+                            delay: 0.4,
                             duration: 0.4,
                             ease: "easeInOut"
                         }
                     }}
-                    className="h-screen w-screen fixed bg-background top-0 pointer-events-none"
+                    className="h-full w-full fixed bg-background top-0 pointer-events-none"
                 />
                 {children}
             </div>

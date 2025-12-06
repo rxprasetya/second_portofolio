@@ -3,10 +3,10 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "@/components/ui/tooltip"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { motion } from "motion/react";
+import { motion } from "motion/react"
 import { SiExpress, SiMysql } from "react-icons/si"
 import { FaCss3, FaGithub, FaHtml5, FaJsSquare, FaLaravel, FaNodeJs, FaReact } from "react-icons/fa"
 
@@ -149,7 +149,16 @@ const Resume = () => {
           </TabsList>
 
           <TabsContent value={`${links[0].id}`} className="w-full">
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.4, ease: "easeInOut" } }}>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: {
+                  delay: 0.4,
+                  duration: 0.4,
+                  ease: "easeInOut"
+                }
+              }}>
               <ScrollArea className="h-[312px]">
                 <ul className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                   {links[0].data.map((row: any, index: number) => (
@@ -168,7 +177,16 @@ const Resume = () => {
           </TabsContent>
 
           <TabsContent value={`${links[1].id}`} className="w-full">
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.4, ease: "easeInOut" } }}>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: {
+                  delay: 0.4,
+                  duration: 0.4,
+                  ease: "easeInOut"
+                }
+              }}>
               <ScrollArea className="h-[312px]">
                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-4">
                   {links[1].data.map((row: any, index: number) => (
@@ -187,7 +205,16 @@ const Resume = () => {
           </TabsContent>
 
           <TabsContent value={`${links[2].id}`} className="w-full">
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: 0.4, ease: "easeInOut" } }}>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: {
+                  delay: 0.4,
+                  duration: 0.4,
+                  ease: "easeInOut"
+                }
+              }}>
               <ScrollArea className="h-[312px]">
                 <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
                   {(links[2].data[0] as any).icons.map((icon: any, index: number) => (
@@ -214,7 +241,11 @@ const Resume = () => {
               initial={{ opacity: 0 }}
               animate={{
                 opacity: 1,
-                transition: { duration: 0.4, ease: "easeInOut" },
+                transition: {
+                  delay: 0.4,
+                  duration: 0.4,
+                  ease: "easeInOut"
+                },
               }}
             >
               <ScrollArea className="h-[312px]">

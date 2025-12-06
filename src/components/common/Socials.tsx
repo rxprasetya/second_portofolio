@@ -1,11 +1,11 @@
 
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 import {
     Tooltip,
     TooltipContent,
     TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+} from "@/components/ui/tooltip"
+import { FaGithub, FaLinkedinIn } from "react-icons/fa"
 
 const links = [
     {

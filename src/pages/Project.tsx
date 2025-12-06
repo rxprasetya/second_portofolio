@@ -1,19 +1,19 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react"
+import { Link } from "react-router-dom"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
-import buahin from "../assets/img/mockup_buahin.webp";
-import stockin from "../assets/img/mockup_stockin.webp";
-import ticketin from "../assets/img/mockup_ticketin.webp";
-import sebarin from "../assets/img/mockup_mapin.webp";
-import simpanin from "../assets/img/mockup_simpanin.webp";
-import { motion } from "motion/react";
-import { Button } from "@/components/ui/button";
-import { FaBootstrap, FaChevronRight, FaCss3Alt, FaGithub, FaHtml5, FaLaravel, FaNodeJs, FaReact } from "react-icons/fa";
-import { SiExpress, SiMysql, SiTailwindcss } from "react-icons/si";
+} from "@/components/ui/tooltip"
+import buahin from "../assets/img/mockup_buahin.webp"
+import stockin from "../assets/img/mockup_stockin.webp"
+import ticketin from "../assets/img/mockup_ticketin.webp"
+import sebarin from "../assets/img/mockup_mapin.webp"
+import simpanin from "../assets/img/mockup_simpanin.webp"
+import { motion } from "motion/react"
+import { Button } from "@/components/ui/button"
+import { FaBootstrap, FaChevronRight, FaCss3Alt, FaGithub, FaHtml5, FaLaravel, FaNodeJs, FaReact } from "react-icons/fa"
+import { SiExpress, SiMysql, SiTailwindcss } from "react-icons/si"
 
 const projects = [
   {
@@ -169,23 +169,23 @@ const projects = [
     demo: "https://fe-management-inventory.vercel.app",
     photo: simpanin,
   },
-];
+]
 
 const Project = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const currentProject = projects[currentIndex];
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const currentProject = projects[currentIndex]
 
   const handlePrev = () => {
     setCurrentIndex((prev) =>
       prev === 0 ? projects.length - 1 : prev - 1
-    );
-  };
+    )
+  }
 
   const handleNext = () => {
     setCurrentIndex((prev) =>
       prev === projects.length - 1 ? 0 : prev + 1
-    );
-  };
+    )
+  }
 
   return (
     <section className="flex flex-col gap-8">
@@ -195,7 +195,11 @@ const Project = () => {
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            transition: { duration: 0.4, ease: "easeInOut" },
+            transition: {
+              delay: 0.4,
+              duration: 0.4,
+              ease: "easeInOut"
+            },
           }}
           className="flex-1 flex flex-col gap-4 order-2 lg:order-0">
           <h1 className="text-6xl lg:text-8xl font-aboreto">
@@ -266,7 +270,11 @@ const Project = () => {
             initial={{ opacity: 0 }}
             animate={{
               opacity: 1,
-              transition: { duration: 0.4, ease: "easeInOut" },
+              transition: {
+                delay: 0.4,
+                duration: 0.4,
+                ease: "easeInOut"
+              },
             }}
             className="bg-cover bg-center w-full min-h-64 xs:min-h-[364px] sm:min-h-[432px] lg:min-h-[396px] xl:min-h-[400px] 2xl:min-h-[512px] drop-shadow-[0px_16px_72px] drop-shadow-primary/30" style={{ backgroundImage: `url(${currentProject.photo})` }} />
           {/* </div> */}
@@ -274,7 +282,11 @@ const Project = () => {
             initial={{ opacity: 0 }}
             animate={{
               opacity: 1,
-              transition: { duration: 0.4, ease: "easeInOut" },
+              transition: {
+                delay: 0.4,
+                duration: 0.4,
+                ease: "easeInOut"
+              },
             }} className="hidden w-full lg:flex justify-end gap-2">
             <Button
               variant="outline"
@@ -299,7 +311,11 @@ const Project = () => {
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
-          transition: { duration: 0.4, ease: "easeInOut" },
+          transition: {
+            delay: 0.4,
+            duration: 0.4,
+            ease: "easeInOut"
+          },
         }} className="lg:hidden w-full flex justify-between gap-2">
         <Button
           variant="outline"
@@ -319,7 +335,7 @@ const Project = () => {
         </Button>
       </motion.div>
     </section >
-  );
-};
+  )
+}
 
-export default Project;
+export default Project
